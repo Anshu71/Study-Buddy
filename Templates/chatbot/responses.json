@@ -1,0 +1,15 @@
+[
+    {
+      "inputs": ["Hello", "Hi"],
+      "output": "Hello, how can I help you today?"
+    },
+    {
+      "inputs": ["What is your name?", "What should I call you?"],
+      "output": "My name is Example Chatbot"
+    },
+    {
+      "inputs": ["What can you do?", "What are your capabilities?"],
+      "output": "I can answer your questions and provide helpful information."
+    }
+  ]
+  

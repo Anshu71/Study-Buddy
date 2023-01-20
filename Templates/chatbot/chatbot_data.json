@@ -1,0 +1,16 @@
+{
+    "conversations": [
+        {
+            "input": ["hi", "hello", "hey"],
+            "output": "Hello! How can I help you?"
+        },
+        {
+            "input": ["how are you", "how are you doing"],
+            "output": "I'm doing well, thank you for asking!"
+        },
+        {
+            "input": ["goodbye", "bye", "see you later"],
+            "output": "Goodbye! Have a great day."
+        }
+    ]
+}
