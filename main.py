@@ -5,7 +5,7 @@ import pymysql
 app = Flask(__name__,template_folder="templates")
 app.secret_key=os.urandom(24)
 
-conn=pymysql.connect(host="localhost",user="root",password="",database="login")
+conn=pymysql.connect(host="localhost",user="root",password="",database="hacknova")
 Cursor=conn.cursor()
 
 @app.route('/')
@@ -15,6 +15,10 @@ def landing():
 @app.route('/login.html')
 def Login():
     return render_template('login.html')
+
+@app.route('/register.html')
+def register():
+    return render_template('register.html') 
 
 @app.route('/logout')
 def logout():
@@ -61,11 +65,11 @@ def login_validation():
     email=request.form.get('email')
     password=request.form.get('password')
 
-    Cursor.execute(""" SELECT * FROM `pal` WHERE `email` LIKE '{}' AND `password` LIKE '{}'  """.format(email,password))
-    pal = Cursor.fetchall()
-    if len(pal)>0:
-        session['user_Id']=pal[0][0] 
-        session['email']=pal[0][1]       #to print the name of the perticular logged in user
+    Cursor.execute(""" SELECT * FROM `login` WHERE `email` LIKE '{}' AND `password` LIKE '{}'  """.format(email,password))
+    login = Cursor.fetchall()
+    if len(login)>0:
+        session['user_Id']=login[0][0] 
+        session['email']=login[0][1]       #to print the name of the perticular logged in user
         return redirect('/welcome.html')
     else:
         return render_template('/login.html')
@@ -77,10 +81,10 @@ def add_user():
     email=request.form.get('email')
     password=request.form.get('password')
 
-    Cursor.execute(""" INSERT INTO `pal` (`user_Id`,`name`,`email`,`password`) VALUES (NULL,'{}','{}','{}')  """.format(name,email,password))
+    Cursor.execute(""" INSERT INTO `login` (`user_Id`,`name`,`email`,`password`) VALUES (NULL,'{}','{}','{}')  """.format(name,email,password))
     conn.commit()
 
-    Cursor.execute(""" SELECT * FROM `pal` WHERE `email` LIKE '{}' """.format(email))
+    Cursor.execute(""" SELECT * FROM `login` WHERE `email` LIKE '{}' """.format(email))
     myuser = Cursor.fetchall()
     session['user_Id'] = myuser[0][0]
     return redirect("/login.html")
@@ -96,6 +100,18 @@ def contact_us():
     conn.commit()
 
     return redirect("/contact.html")
+
+
+
+#Language Page
+
+@app.route('/Languages/c.html')
+def c():
+    return render_template('Languages/c.html')
+
+@app.route('/Languages/course_c.html')
+def c_c():
+    return render_template('Languages/course_c.html')
 
 
 app.run(debug=True)

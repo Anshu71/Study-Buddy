@@ -4,22 +4,219 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Courses</title>
 </head>
 
 <body>
-<header class="text-gray-600 body-font">
+  <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         <span class="ml-3 text-xl">Code_Spot</span>
       </a>
-      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-        <li>Welcome, {{ email }} </li>
-            <a class="mr-12 text-gray-600 hover:text-black hover:underline" title="Home" href="welcome.html"><b>Home</b></a>
-            <a class="mr-12 text-gray-600 hover:text-black hover:underline" title="Courses" href="courses.html">Courses</a>
-            <a class="mr-12 text-gray-600 hover:text-black hover:underline" title="Contact Us" href="contact.html">Contact Us</a>
-            <a class="mr-5 text-gray-600 hover:text-black hover:underline" title="Log Out" href="/logout">Log Out</a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center font-sans">
+            <a class="mr-12 text-gray-600 hover:text-black hover:underline" title="Home" href="welcome.html">Home</a>
+            <a class="mr-12 text-gray-600 hover:text-black hover:underline" title="Courses" href="courses.html"><b>Courses</b></a>
+            <a class="mr-12 text-gray-600 hover:text-black hover:underline" title="Feedback" href="feedback.html">Feedback</a>
+            <div class="dropdown">
+              <button class="dropbtn">
+                <div class="mr-8 text-gray-600 hover:text-black hover:underline">Profile</div>
+              </button>
+              <div class="dropdown-content">
+                <a class="text-gray-600 hover:text-black hover:underline" href="#">{{ email }}</a>
+                <hr>
+                <a class="text-gray-600 hover:text-black hover:underline" href="/logout">Log Out</a>
+              </div>
+            </div> 
       </nav>
     </div>
   </header>
+
+
+  <style>
+    .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+    .dropdown .dropbtn {
+      font-size: 16px;    
+      border: none;
+      outline: none;
+      color: rgb(0, 0, 0);
+      margin: 0;
+    }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff; 
+    min-width: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    /* color: black; */
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+    </style>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+  
+  <hr><hr>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-12 mx-auto">
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      
+        <div class="flex flex-col text-center w-full mb-7 my-5">
+            <h1 class="text-2xl font-medium title-font mb-4 text-black hover:cursor-pointer">Languages</h1>
+        </div>
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/Language/c.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">C Language</h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="Languages/c.html" class="">Let's Begin</a></button>
+            </div>
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/Language/c++.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">CPP Language</h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.youtube.com/watch?v=h-TcBEw5DTQ" class="">Let's Begin</a></button>
+            </div>
+
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+              <div class="rounded-lg h-64 overflow-hidden">
+                  <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/Language/python.jpg')}}">
+              </div>
+              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Python Language</h2>
+              <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.youtube.com/watch?v=h-TcBEw5DTQ" class="">Let's Begin</a></button>
+            </div>
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/Language/java.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Java Language</h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.instagram.com/stories/highlights/18049539145371643/" class="">Let's Begin</a></button>
+            </div>
+    
+        </div>
+    </div>
+  </section>
+
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-12 mx-auto">
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      
+        <div class="flex flex-col text-center w-full mb-7 my-5">
+            <h1 class="text-2xl font-medium title-font mb-4 text-black hover:cursor-pointer">Development</h1>
+        </div>
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/development/FED.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Front End Development</h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.hackerrank.com/gfg-tcet-round-2-1664679601" class="">Let's Begin</a></button>
+            </div>
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/development/BED.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Back End Development
+            </h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.youtube.com/watch?v=h-TcBEw5DTQ" class="">Let's Begin</a></button>
+            </div>
+
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+              <div class="rounded-lg h-64 overflow-hidden">
+                  <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/development/DS.jpg')}}">
+              </div>
+              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Data Science</h2>
+              <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.youtube.com/watch?v=h-TcBEw5DTQ" class="">Let's Begin</a></button>
+            </div>
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/development/ML.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Machine Language</h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.instagram.com/stories/highlights/18049539145371643/" class="">Let's Begin</a></button>
+            </div>
+    
+        </div>
+    </div>
+  </section>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-12 mx-auto">
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      
+        <div class="flex flex-col text-center w-full mb-7 my-5">
+            <h1 class="text-2xl font-medium title-font mb-4 text-black hover:cursor-pointer">Data Structure And Algorithm</h1>
+        </div>
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/dsa/s.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Stack</h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.hackerrank.com/gfg-tcet-round-2-1664679601" class="">Let's Begin</a></button>
+            </div>
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/dsa/q.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Queue</h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.youtube.com/watch?v=h-TcBEw5DTQ" class="">Let's Begin</a></button>
+            </div>
+
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+              <div class="rounded-lg h-64 overflow-hidden">
+                  <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/dsa/ll.jpg')}}">
+              </div>
+              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Linked List</h2>
+              <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.youtube.com/watch?v=h-TcBEw5DTQ" class="">Let's Begin</a></button>
+            </div>
+    
+            <div class="p-4 md:w-1/4 sm:mb-0 mb-6 hover:drop-shadow-2xl">
+            <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="{{url_for('static', filename='images/dsa/qnt.jpg')}}">
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Graph & Tree</h2>
+            <button class="flex mx-auto mt-6 text-black bg-white border-0 py-2 px-5 focus:outline-none hover:bg-blue-400 hover:text-white rounded drop-shadow-2xl"><a href="https://www.instagram.com/stories/highlights/18049539145371643/" class="">Let's Begin</a></button>
+            </div>
+    
+        </div>
+    </div>
+  </section>
