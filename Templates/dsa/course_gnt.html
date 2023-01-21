@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>C Language</title>
+    <title>Graph and Queue</title>
 </head>
 
 <body>
@@ -572,11 +572,11 @@
             const scorePerCent = Math.round(100 * score/questions.length);
             
             // choose the image based on the scorePerCent
-            let img = (scorePerCent >= 80) ? "{{url_for('static', filename='images/Languages/c.jpg')}}" :
-                    (scorePerCent >= 60) ? "{{url_for('static', filename='images/Languages/c.jpg')}}" :
-                    (scorePerCent >= 40) ? "{{url_for('static', filename='images/Languages/c.jpg')}}" :
-                    (scorePerCent >= 20) ? "{{url_for('static', filename='images/Languages/c.jpg')}}" :
-                    // "{{url_for('static', filename='images/Language/c.jpg')}}"; 
+            let img = (scorePerCent >= 80) ? "{{url_for('static', filename='images/quiz/5.png')}}" :
+                    (scorePerCent >= 60) ? "{{url_for('static', filename='images/quiz/4.png')}}" :
+                    (scorePerCent >= 40) ? "{{url_for('static', filename='images/quiz/3.png')}}" :
+                    (scorePerCent >= 20) ? "{{url_for('static', filename='images/quiz/2.png')}}" :
+                    "{{url_for('static', filename='images/quiz/1.png')}}";
             
             scoreDiv.innerHTML = "<img src="+ img +">";
             scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";

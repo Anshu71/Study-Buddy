@@ -201,4 +201,12 @@ def queue():
 def c_queue():
     return render_template('dsa/course_queue.html')
 
+@app.route('/dsa/gnt.html')
+def gnt():
+    return render_template('dsa/gnt.html')
+
+@app.route('/dsa/course_gnt.html')
+def c_gnt():
+    return render_template('dsa/course_gnt.html')
+
 app.run(debug=True)
