@@ -27,7 +27,19 @@ def logout():
 
 @app.route('/feedback.html')
 def contact():
-    return render_template('feedback.html')
+    if 'user_Id' in session:
+        if 'user_Id' or 'email' in session:
+            user_Id = session['user_Id']  
+            email = session['email']
+            # name = session['name']
+            return render_template('feedback.html', email=email)
+        elif 'user_Id' not in session:
+            return redirect('/login.html')
+        else:
+            user_Id = None
+            return render_template('feedback.html', user_Id=user_Id) 
+    else:
+        return render_template('login.html')
 
 @app.route('/welcome.html')
 def home():
@@ -90,7 +102,7 @@ def add_user():
     return redirect("/login.html")
 
 
-@app.route('/contact_us', methods=['POST'])
+@app.route('/feedback.html', methods=['POST'])
 def contact_us():
     name=request.form.get('name')
     email=request.form.get('email')
@@ -99,7 +111,7 @@ def contact_us():
     Cursor.execute(""" INSERT INTO `contact_us` (`user_Id`,`name`,`email`,`message`) VALUES (NULL,'{}','{}','{}')  """.format(name,email,message))
     conn.commit()
 
-    return redirect("/contact.html")
+    return redirect("/feedback.html")
 
 
 
@@ -112,6 +124,25 @@ def c():
 @app.route('/Languages/course_c.html')
 def c_c():
     return render_template('Languages/course_c.html')
+
+@app.route('/Languages/cpp.html')
+def cpp():
+    return render_template('Languages/cpp.html')
+
+@app.route('/Languages/course_cpp.html')
+def c_cpp():
+    return render_template('Languages/course_cpp.html')
+
+
+#Development Page
+
+@app.route('/development/fed.html')
+def fed():
+    return render_template('development/fed.html')
+
+@app.route('/development/course_fed.html')
+def c_fed():
+    return render_template('/development/course_fed.html')
 
 
 app.run(debug=True)
