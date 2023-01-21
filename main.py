@@ -133,6 +133,22 @@ def cpp():
 def c_cpp():
     return render_template('Languages/course_cpp.html')
 
+@app.route('/Languages/java.html')
+def j():
+    return render_template('Languages/java.html')
+
+@app.route('/Languages/course_java.html')
+def c_j():
+    return render_template('Languages/course_java.html')
+
+@app.route('/Languages/python.html')
+def py():
+    return render_template('Languages/python.html')
+
+@app.route('/Languages/course_python.html')
+def c_py():
+    return render_template('Languages/course_python.html')
+
 
 #Development Page
 
@@ -144,5 +160,45 @@ def fed():
 def c_fed():
     return render_template('/development/course_fed.html')
 
+@app.route('/development/bed.html')
+def bed():
+    return render_template('development/bed.html')
+
+@app.route('/development/course_bed.html')
+def c_bed():
+    return render_template('/development/course_bed.html')
+
+@app.route('/development/ds.html')
+def ds():
+    return render_template('development/ds.html')
+
+@app.route('/development/course_ds.html')
+def c_ds():
+    return render_template('/development/course_ds.html')
+
+@app.route('/development/ml.html')
+def ml():
+    return render_template('development/ml.html')
+
+@app.route('/development/course_ml.html')
+def c_ml():
+    return render_template('/development/course_ml.html')
+
+#Data 
+@app.route('/dsa/stack.html')
+def stack():
+    return render_template('dsa/stack.html')
+
+@app.route('/dsa/course_stack.html')
+def c_stack():
+    return render_template('dsa/course_stack.html')
+
+@app.route('/dsa/queue.html')
+def queue():
+    return render_template('dsa/queue.html')
+
+@app.route('/dsa/course_queue.html')
+def c_queue():
+    return render_template('dsa/course_queue.html')
 
 app.run(debug=True)
