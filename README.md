@@ -1,11 +1,11 @@
 # Hackanova_Codespot
-Codespot is a website made for school kids to learn the coding from their school itself. A very useful website for students to learn basic coding along with quiz.
+Codespot is a website made during Hackathon(Hacknova 2.0) with the team of [Ankit](https://github.com/ankit-m15), [Anshu](https://github.com/Anshu71), and [Vedika](https://github.com/evil-queen28). and this project achieved the first runner in the Education domain. This website has been made for school kids to learn coding from their school itself a very useful website for students to learn basic coding along with quizzes and also provides a system coin on the correct answers which can be used to buy further courses on the website itself and it also has a structured roadmap and details articles on topics with videos and It also has an Integrated chatbot which has been done using chatgpt API. 
 
 # Features
 1. Structured Roadmap of various languages
 2. Quiz game to increase the interest of kids
 3. Doubt support by using Chatbot
-4. Providing points depending on user’s activeness
+4. Providing points depending on the user’s activeness and on the correct answer of quiz
   
 
 # Requirements
